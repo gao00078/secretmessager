@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://griffis.edumedia.ca  'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' https: data: content: griffis.edumedia.ca  placeholdit.imgix.net placehold.it ;" />
+    
+<!--        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://griffis.edumedia.ca  'unsafe-eval'; style-src 'self' 'unsafe-inline';  img-src 'self' https: data: content: griffis.edumedia.ca  placeholdit.imgix.net placehold.it ;" />-->
+    
+    
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Messenger App</title>
+</head>
+
+<body>
+   
+          <header class="bar bar-nav">
+        <h1 class="title">Messenger</h1>
+    </header>
+    <div class="content">
+        <div id="loginPage" class="content-padded">
+            <form id="loginForm">
+                <input id="userName" type="text" placeholder="Username" value="kai gao">
+                <input id="email" type="text" placeholder="Email" value="kgao604@gmail.com">
+                <button id="login" class="btn btn-primary btn-block">Login</button>
+                <button id="register" class="btn btn-positive btn-block">Register</button>
+            </form>
+                          <ul class="invisible"  class="table-view">
+                    <li class="table-view-cell"><img id="imgTempInSendModalForDrawInCanvas" class="media-object" ></li>
+                    <li class="table-view-cell"><img id="imgTempInDetailsModalForDrawInCanvas"class="media-object" ></li>
+
+                </ul>
+        </div>
+    </div> 
+   
+   
+   
+
+    <div id="msgListModal" class="modal">
+        <header class="bar bar-nav">
+            <a id="btnSendMsgListModal" class="pull-right">
+                <button class="btn btn-link btn-nav ">
+    Send
+  </button>
+            </a>
+            <h1 class="title">List of messages</h1>
+        </header>
+
+        <div class="content">
+            <ul class="table-view" id="msg-list">
+                <li class="table-view-cell ">
+                    <div class="media-body"> Message from: ronaldo
+
+                        <a class="navigate-right" href="#detailsMsgModal"> </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div id="detailsMsgModal" class="modal">
+
+        <div class="content-padded">
+
+            <header class="bar bar-nav">
+                <a id="btnBackInDetailsModal" href="#detailsMsgModal">
+                    <button class="btn btn-link btn-nav pull-left">
+    <span class="icon icon-left-nav"></span>
+    Back
+  </button>
+                </a>
+                <a id="btnSendDetailsMsgModal" class="pull-right">
+                    <button class="btn btn-link btn-nav ">
+    Send
+  </button>
+                </a>
+                <h1 class="title">Message details</h1>
+            </header>
+
+
+            <ul id="msg-detail-list" class="table-view">
+                <li class="table-view-divider">^ </li>
+                <li class="table-view-cell">From: Ronaldo<img id="imgInDetailModal" class="media-object " src="img/imgTest.png"></li>
+
+            </ul>
+
+
+            <form>
+                <textarea id="textDecode" rows="3"></textarea>
+                <button id="btnDelete" class="btn btn-negative btn-block">Delete</button>
+            </form>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <div id="msgSendModal" class="modal">
+        <!--        <div class="content-padded">-->
+
+        <header class="bar bar-nav">
+            <a href="#msgSendModal">
+                <button id="btnBack" class="btn btn-link btn-nav pull-left">
+    <span class="icon icon-left-nav"></span>
+    Back
+  </button>
+            </a>
+            <h1 class="title">Send message </h1>
+        </header>
+        <div class="content">
+            <div id="sendPage" class="content-padded">
+                <ul id="msg-send-list" class="table-view">
+<!--                    <li class="table-view-cell"><img id="imgInDetailModal" class="media-object " src="img/imgTest.png"></li>-->
+
+                </ul>
+
+
+                <form id="formSendModal">
+                <select id="selectNextSibling" name="users">
+                    <option selected="true" disabled="disabled" value="disabledOption">Select a recipient &#x25BC;
+                    </option>                    
+<!--                    <option value="saab">Saab</option>-->
+                 
+                </select>
+                    <textarea id="textSendmodal" rows="3" placeholder="Enter your message, which will be hidden inside the picture"></textarea>
+                    <button id="btnSend" class="btn btn-primary btn-block">Send</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+<!--
+  <div>
+      <canvas id="canvasTest" width="300" height="300"></canvas>
+  </div>
+-->
+  
+
+
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- include the compiled Ratchet JS -->
+    <script src="js/ratchet.min.js"></script>
+    <script src="js/canvas-to-blob.min.js"></script>
+    <script type="text/javascript" src="js/bits-1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
+
+
+<!--
+
+        <header class="bar bar-nav">
+            <a href="#detailsMsgModal">
+                <button class="btn btn-link btn-nav pull-left">
+    <span class="icon icon-left-nav"></span>
+    Back
+  </button>
+            </a>
+                        The following two have difference.
+             
+            <a href="#detailsMsgModal">
+               <button class="btn btn-link btn-nav pull-right">
+    Send
+  </button>
+            </a>
+
+            <a id="btnSendDetailsMsgModal" class="pull-right">
+                <button class="btn btn-link btn-nav ">
+    Send
+  </button>
+            </a>
+            <h1 class="title">Message details</h1>
+        </header>
+-->
